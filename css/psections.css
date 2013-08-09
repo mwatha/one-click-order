@@ -1,0 +1,111 @@
+.zebra-striped {
+  width: 95%;
+}
+
+.images {                                                                       
+  border-radius: 6px 6px 6px 6px;                                               
+  height: 175px;                                                                
+  width: 175px;                                                                 
+}                                                                               
+                                                                                
+.item_description {                                                             
+  padding-left: 10px;                                                           
+  vertical-align: top;                                                          
+  line-height: 1.4em;                                                           
+  color: #222222;                                                               
+  font-size: 12px;                                                              
+}                                                                               
+                                                                                
+.image_container {                                                              
+  width: 150px;                                                                 
+  vertical-align: top;                                                          
+}                                                                               
+                                                                                
+.details {                                                                      
+  width: 200px;                                                                 
+  padding-left: 10px;                                                           
+  vertical-align: top;                                                          
+  line-height: 1.4em;                                                           
+  color: #222222;                                                               
+  font-size: 12px;                                                              
+}                                                                               
+                                                                                
+.artist_row {                                                                   
+  /*border-width: 0px 0px 1px 0px;                                              
+  border-style: solid;                                                          
+  line-height: 3; */                                                            
+}                                                                               
+                                                                                
+.artist_break hr {                                                              
+  /*background-color: black !important;*/                                       
+  height: 3px;                                                                  
+}
+
+
+
+
+
+
+
+
+
+.btn {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: rgb(250, 250, 250);
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255) 25%, rgb(230, 230, 230));
+    background-repeat: no-repeat;
+    border-bottom-color: rgb(187, 187, 187);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: rgb(204, 204, 204);
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: rgb(204, 204, 204);
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+    border-top-color: rgb(204, 204, 204);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+
+
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+}
