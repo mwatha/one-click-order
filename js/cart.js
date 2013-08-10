@@ -93,7 +93,7 @@
       html+="</tr>";
       if(c > 0 && credit > 0) {
         html +="<tr>";
-        html+="<td colspan='3'><a class='btn' href='summaryb4.php'>Press an order</a></td>";
+        html+="<td colspan='3'><a style='width: 90%;' class='btn' href='summaryb4.php'>Press an order</a></td>";
         html+="</tr>";
         html +="<tr>";
         html+="<td colspan='3'><hr /></td>";
