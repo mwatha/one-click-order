@@ -45,14 +45,32 @@ mysql_select_db("shoes", $db);
     
     	<div id="templatemo_content">
         <!-- start of content -->
-        <h1>Live life ....</h1>
+        <h1>Contact us ....</h1>
            
         <div class="psections">
           
-        <h3>New shoes</h3>
 
-       
-        <?php require 'home.php'; ?>
+          <div style="padding-left:50px;">
+
+
+          <strong>Titian.com</strong> <br /><br />If there are any questions or comments regarding our services, you may contact us using the information below. <br /><br />
+
+          P.O Box 30098<br />
+          LL 3<br />
+          Lilongwe<br />
+          Malawi<br />
+          Email:&nbsp;support@titian.com<br />
+          Phone number:&nbsp; +265 999 372 753<br /><br />
+          <h4>Location:</h4>
+          Titian Headquarters<br />
+          Chilambura road, Lilongwe<br />
+          <span></span><span></span>
+          <br />
+          <br />
+
+
+          </div>
+
 
 
         </div>
@@ -103,10 +121,10 @@ mysql_select_db("shoes", $db);
     	<div class="cleaner"></div>
     </div> <!-- end of main-->
 
-	<div id="templatemo_footer">
+   <div id="templatemo_footer">                                                  
   Copyright © 2013 <a href="#">Tanian</a> | <a href="https://www.facebook.com/orama2?fref=ts&ref=br_tf" target="_blank">orama chisale</a>
   </div> <!-- end of templatemo_footer -->
-    
+ 
 </div> <!-- end of wrapper -->
 </body>
 </html>

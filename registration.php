@@ -29,8 +29,8 @@ mysql_select_db("shoes", $db);
             <li><a href="men.php">Men</a></li>
             <li><a href="kids.php">Kids</a></li>
             <li><a href="contact.php">Contact us</a></li>
-            <?php if($_SESSION["role"]) { ?>                                
-              <li><a href="admin.php" class="last">Settings</a></li>
+            <?php if($_SESSION["role"] == 'admin') { ?>                                
+              <li><a href="admin.php" class="last">admin</a></li>
             <?php } ?>
             <?php if($_SESSION['username']) { ?>                                
               <li><a href="logout.php" class="last">Logout</a>&nbsp;welcome:&nbsp;<?php echo $_SESSION['username']; ?></li>
@@ -45,14 +45,80 @@ mysql_select_db("shoes", $db);
     
     	<div id="templatemo_content">
         <!-- start of content -->
-        <h1>Live life ....</h1>
+        <h1>Customer registration ....</h1>
            
         <div class="psections">
           
-        <h3>New shoes</h3>
 
+
+	   <form action="createuser.php" method="post" style="width:399px;">
+        <table style="padding-bottom: 20px;"><br />
+          <tr>
+            <td>First name</td>
+            <td><input type="text" name="fname" /></td>
+          </tr>
+          <tr>
+            <td>Last name</td>
+            <td><input type="text" name="lname" /></td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <select name="gender">
+                <option value=""></option>
+                <option value="Famale">Famale</option>
+                <option value="Male">Male</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Birthdate</td>
+            <td><input type="text" name="birthdate" /></td>
+          </tr>
+          <tr>
+            <td>username</td>
+            <td><input type="text" name="username" /></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" /></td>
+          </tr>
+          <tr>
+            <td>Phone number</td>
+            <td><input type="text" name="phone_number" /></td>
+          </tr>
+          <tr>
+            <td>Mailing address</td>
+            <td>
+              <textarea name="mailing_address"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Passowrd</td>
+            <td><input type="password" name="password" /></td>
+          </tr>
+          <tr>
+            <td>Re-enter password</td>
+            <td><input type="password" name="password2" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align:right;" colspan="2">
+              <input type="button" onclick="javascript:document:location='login.php';" value="Cancel" />
+              <!--&nbsp;<input type="submit" value="Submit" id="submit" disabled="disabled"  /> -->
+              &nbsp;<input type="submit" value="Submit" id="submit"  />
+            </td>
+          </tr>
+		  
+        </table>
+
+      </form>
        
-        <?php require 'home.php'; ?>
 
 
         </div>
@@ -103,10 +169,10 @@ mysql_select_db("shoes", $db);
     	<div class="cleaner"></div>
     </div> <!-- end of main-->
 
-	<div id="templatemo_footer">
+   <div id="templatemo_footer">                                                  
   Copyright © 2013 <a href="#">Tanian</a> | <a href="https://www.facebook.com/orama2?fref=ts&ref=br_tf" target="_blank">orama chisale</a>
   </div> <!-- end of templatemo_footer -->
-    
+ 
 </div> <!-- end of wrapper -->
 </body>
 </html>
