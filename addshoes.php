@@ -29,9 +29,9 @@ mysql_select_db("shoes", $db);
             <li><a href="men.php">Men</a></li>
             <li><a href="kids.php">Kids</a></li>
             <li><a href="contact.php">Contact us</a></li>
-            <?php if($_SESSION["role"] == 'admin') { ?>                            
-              <li><a href="admin.php" class="last">admin</a></li>               
-            <?php } ?> 
+            <?php if($_SESSION["role"]) { ?>                                
+              <li><a href="admin.php" class="last">Settings</a></li>
+            <?php } ?>
             <?php if($_SESSION['username']) { ?>                                
               <li><a href="logout.php" class="last">Logout</a>&nbsp;welcome:&nbsp;<?php echo $_SESSION['username']; ?></li>
             <?php }else{ ?>                                                     
@@ -45,14 +45,13 @@ mysql_select_db("shoes", $db);
     
     	<div id="templatemo_content">
         <!-- start of content -->
-        <h1>Add shoes ....</h1>
+        <h1>Add shoe(s) ....</h1>
            
         <div class="psections">
           
 
 
-
-        <?php
+	      <?php
           $query = "SELECT * FROM shoe_types;";
 
           $results = mysql_query($query,$db); 
@@ -112,10 +111,7 @@ mysql_select_db("shoes", $db);
             </tr>
           </form>
         </table>
-
-
-
-
+       
 
 
         </div>
@@ -134,11 +130,8 @@ mysql_select_db("shoes", $db);
                 <div class="content">
             
                     <ul class="categories_list">
-                    	<li><a href="#">Quisque in ligula</a></li>
-                        <li><a href="#">Donec a massa dui</a></li>
-                        <li><a href="#">Aenean facilisis</a></li>
-                        <li><a href="#">Etiam vitae consequat</a></li>
-                        <li><a href="#">Lorem ipsum dolor</a></li>
+                    	<!--li><a href="#">Quisque in ligula</a></li-->
+                      <?php require 'shopping_cart.php'; ?>
                     </ul>
                     
                 </div>
@@ -155,12 +148,8 @@ mysql_select_db("shoes", $db);
                 <div class="content">
             
                    <ul class="categories_list">
-                        <li><a href="#">Lorem ipsum dolor</a></li>
-                        <li><a href="#">Phasellus eget lorem</a></li>
-                        <li><a href="#">Sed sit amet sem</a></li>
-                        <li><a href="#">Cras eget est vel</a></li>
-                        <li><a href="#">Quisque in ligula</a></li>
-                    </ul>
+                     <?php require 'credit_cart.php'; ?>
+                   </ul>
                     
                 </div>
                 
@@ -173,11 +162,10 @@ mysql_select_db("shoes", $db);
     	<div class="cleaner"></div>
     </div> <!-- end of main-->
 
-	<div id="templatemo_footer">
-  Copyright © 2048 <a href="#">Your Company Name</a> | 
-  <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+   <div id="templatemo_footer">                                                  
+  Copyright © 2013 <a href="#">Tanian</a> | <a href="https://www.facebook.com/orama2?fref=ts&ref=br_tf" target="_blank">orama chisale</a>
   </div> <!-- end of templatemo_footer -->
-    
+ 
 </div> <!-- end of wrapper -->
 </body>
 </html>

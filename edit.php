@@ -43,7 +43,7 @@ if($credit != null) {
   if($count > 0) {
   $query = "UPDATE user_credits SET credit = '$credit' WHERE user_id=$user_id";
   }else{
-  $query = "INSERT INTO user_credits VALUES(NULL,$user_id,'$credit');";
+  $query = "INSERT INTO user_credits VALUES(NULL,$user_id,'$credit',NULL);";
   }
   mysql_query($query,$db); 
 }

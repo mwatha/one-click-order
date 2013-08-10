@@ -206,11 +206,10 @@ mysql_select_db("shoes", $db);
     	<div class="cleaner"></div>
     </div> <!-- end of main-->
 
-	<div id="templatemo_footer">
-  Copyright © 2048 <a href="#">Your Company Name</a> | 
-  <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+   <div id="templatemo_footer">                                                  
+  Copyright © 2013 <a href="#">Tanian</a> | <a href="https://www.facebook.com/orama2?fref=ts&ref=br_tf" target="_blank">orama chisale</a>
   </div> <!-- end of templatemo_footer -->
-    
+ 
 </div> <!-- end of wrapper -->
 </body>
 </html>

@@ -1,16 +1,16 @@
 <?php session_start();                                                          
                                                                                 
-$db = mysql_pconnect("localhost","root","");                                    
-mysql_select_db("shoes", $db);                                                 
+$db = mysql_pconnect("localhost","root","letusout!");                                    
+mysql_select_db("shoes", $db);                                                  
                                                                                 
-?>  
-
-
+?>                                                                              
+                                                                                
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Shoes</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/psections.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="templatemo_wrapper">
@@ -29,13 +29,13 @@ mysql_select_db("shoes", $db);
             <li><a href="men.php">Men</a></li>
             <li><a href="kids.php">Kids</a></li>
             <li><a href="contact.php">Contact us</a></li>
-            <?php if($_SESSION["role"] == 'customer') { ?>                            
-              <li><a href="admin.php" class="last">admin</a></li>               
-            <?php } ?> 
-            <?php if($_SESSION['username']) { ?>
+            <?php if($_SESSION["role"]) { ?>                                
+              <li><a href="admin.php" class="last">Settings</a></li>
+            <?php } ?>
+            <?php if($_SESSION['username']) { ?>                                
               <li><a href="logout.php" class="last">Logout</a>&nbsp;welcome:&nbsp;<?php echo $_SESSION['username']; ?></li>
-            <?php }else{ ?>
-              <li><a href="login.php" class="last">Login</a></li>
+            <?php }else{ ?>                                                     
+              <li><a href="login.php" class="last">Login</a></li>               
             <?php } ?>
         </ul>    	
     
@@ -44,23 +44,20 @@ mysql_select_db("shoes", $db);
     <div id="templatemo_main">
     
     	<div id="templatemo_content">
-        
-            <h1>Introducing to Living</h1>
+        <!-- start of content -->
+        <h1>Introducing to Living ....</h1>
            
-             
-            
-            
-            <div class="two_col float_l">
-              
-              .................. 
-                
-            </div>
-            
-            <div class="two_col float_r">
-            .....................    
-            </div>
-        
-        </div> <!-- end of content -->
+        <div class="psections">
+          
+
+
+       ............................................... 
+
+
+        </div>
+
+        <!-- end of content -->
+        </div> 
         
         <div id="templatemo_sidebar">
         	
@@ -73,11 +70,8 @@ mysql_select_db("shoes", $db);
                 <div class="content">
             
                     <ul class="categories_list">
-                    	<li><a href="#">Quisque in ligula</a></li>
-                        <li><a href="#">Donec a massa dui</a></li>
-                        <li><a href="#">Aenean facilisis</a></li>
-                        <li><a href="#">Etiam vitae consequat</a></li>
-                        <li><a href="#">Lorem ipsum dolor</a></li>
+                    	<!--li><a href="#">Quisque in ligula</a></li-->
+                      <?php require 'shopping_cart.php'; ?>
                     </ul>
                     
                 </div>
@@ -94,12 +88,8 @@ mysql_select_db("shoes", $db);
                 <div class="content">
             
                    <ul class="categories_list">
-                        <li><a href="#">Lorem ipsum dolor</a></li>
-                        <li><a href="#">Phasellus eget lorem</a></li>
-                        <li><a href="#">Sed sit amet sem</a></li>
-                        <li><a href="#">Cras eget est vel</a></li>
-                        <li><a href="#">Quisque in ligula</a></li>
-                    </ul>
+                     <?php require 'credit_cart.php'; ?>
+                   </ul>
                     
                 </div>
                 
@@ -113,8 +103,7 @@ mysql_select_db("shoes", $db);
     </div> <!-- end of main-->
 
 	<div id="templatemo_footer">
-  Copyright © 2048 <a href="#">Your Company Name</a> | 
-  <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+  Copyright © 2013 <a href="#">Tanian</a> | <a href="https://www.facebook.com/orama2?fref=ts&ref=br_tf" target="_blank">orama chisale</a>
   </div> <!-- end of templatemo_footer -->
     
 </div> <!-- end of wrapper -->

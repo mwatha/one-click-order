@@ -29,8 +29,8 @@ mysql_select_db("shoes", $db);
             <li><a href="men.php">Men</a></li>
             <li><a href="kids.php">Kids</a></li>
             <li><a href="contact.php">Contact us</a></li>
-            <?php if($_SESSION["role"] == 'admin') { ?>                                
-              <li><a href="admin.php" class="last">admin</a></li>
+            <?php if($_SESSION["role"]) { ?>                                
+              <li><a href="admin.php" class="last">Settings</a></li>
             <?php } ?>
             <?php if($_SESSION['username']) { ?>                                
               <li><a href="logout.php" class="last">Logout</a>&nbsp;welcome:&nbsp;<?php echo $_SESSION['username']; ?></li>
@@ -85,12 +85,29 @@ mysql_select_db("shoes", $db);
             </td>                                                               
             <td class="details">                                                
               <?php 
-                $quantity = 0;
-                $status = "OUT OF STOCK";         
+                $quantity = $r[5];
+                if($quantity < 1) {
+                  $status = "OUT OF STOCK";    
+                }else{
+                  $status = "AVAILABLE";    
+                }     
               ?>                                                                
               <p style="color:Purple;font-size:15px;"><?php echo $status; ?></p>           
-              <p style="color:orange;font-size:20px;"><?php echo $r[3]; ?></p>
-              <p><a class="btn" href="/products/view/<?php echo $r[0]; ?>">View more</a></p>
+              <p style="color:orange;font-size:20px;">₤<?php echo $r[3]; ?></p>
+              <p>
+
+               <select name="quantity" id="quantity<?php echo $r[0]; ?>">                                    
+                <option value=""></option>                                      
+                <?php for($x=1; $x <= $quantity; $x++){ ?>
+                  <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
+                <?php                                                            
+                } ?>                                                                
+              </select>
+
+              </p>
+              <?php if($_SESSION['username']) { ?>
+              <a class="btn" href="javascript:add(<?php echo $r[0]; ?>);">Add to cart</a>
+              <?php } ?>
             </td>                                                               
           </tr>                                                                 
           <tr>                                                                  
@@ -101,11 +118,6 @@ mysql_select_db("shoes", $db);
           } ?>                                                               
           </tbody>                                                              
         </table>
-
-
-
-
-
 
 
         </div>
@@ -124,11 +136,8 @@ mysql_select_db("shoes", $db);
                 <div class="content">
             
                     <ul class="categories_list">
-                    	<li><a href="#">Quisque in ligula</a></li>
-                        <li><a href="#">Donec a massa dui</a></li>
-                        <li><a href="#">Aenean facilisis</a></li>
-                        <li><a href="#">Etiam vitae consequat</a></li>
-                        <li><a href="#">Lorem ipsum dolor</a></li>
+                    	<!--li><a href="#">Quisque in ligula</a></li-->
+                      <?php require 'shopping_cart.php'; ?>
                     </ul>
                     
                 </div>
@@ -145,12 +154,8 @@ mysql_select_db("shoes", $db);
                 <div class="content">
             
                    <ul class="categories_list">
-                        <li><a href="#">Lorem ipsum dolor</a></li>
-                        <li><a href="#">Phasellus eget lorem</a></li>
-                        <li><a href="#">Sed sit amet sem</a></li>
-                        <li><a href="#">Cras eget est vel</a></li>
-                        <li><a href="#">Quisque in ligula</a></li>
-                    </ul>
+                     <?php require 'credit_cart.php'; ?>
+                   </ul>
                     
                 </div>
                 
@@ -163,11 +168,10 @@ mysql_select_db("shoes", $db);
     	<div class="cleaner"></div>
     </div> <!-- end of main-->
 
-	<div id="templatemo_footer">
-  Copyright © 2048 <a href="#">Your Company Name</a> | 
-  <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
-  </div> <!-- end of templatemo_footer -->
-    
+   <div id="templatemo_footer">                                                  
+   Copyright © 2013 <a href="#">Tanian</a> | <a href="https://www.facebook.com/orama2?fref=ts&ref=br_tf" target="_blank">orama chisale</a>
+   </div> <!-- end of templatemo_footer -->
+        
 </div> <!-- end of wrapper -->
 </body>
 </html>
