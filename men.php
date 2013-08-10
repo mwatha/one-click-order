@@ -58,7 +58,8 @@ mysql_select_db("shoes", $db);
           $query = "SELECT * FROM shoe_types WHERE name = 'Men';";                                 
           $results = mysql_query($query,$db);                                   
           $r = mysql_fetch_row($results); 
-
+          
+          $r[0] = mysql_real_escape_string($r[0]);
           $query = "SELECT * FROM shoes WHERE shoe_type_id = $r[0];";                                 
           $results = mysql_query($query,$db);                                   
           $n = mysql_num_rows($results); 

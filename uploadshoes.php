@@ -3,11 +3,11 @@
 $db = mysql_pconnect("localhost","root","letusout!");                            
 mysql_select_db("shoes", $db); 
 
-$name = $_POST["name"];
-$shoe_type_id = $_POST["type"];
-$sizes = $_POST["size"];
-$price = $_POST["price"];
-$quantity = $_POST["quantity"];
+$name = mysql_real_escape_string($_POST["name"]);
+$shoe_type_id = mysql_real_escape_string($_POST["type"]);
+$sizes = mysql_real_escape_string($_POST["size"]);
+$price = mysql_real_escape_string($_POST["price"]);
+$quantity = mysql_real_escape_string($_POST["quantity"]);
 
 $filename = $_FILES['uploadedfile']['name']; // Get the name of the file (including file extension).
 $ext = substr($filename, strpos($filename,'.'), strlen($filename)-1); // Get the extension from the filename.

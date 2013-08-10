@@ -39,7 +39,7 @@ for($i=0;$i < count($str);$i++){
 }
 /* ------------------------- */
 
-
+$product_ids = mysql_real_escape_string($product_ids);
 $query = "SELECT shoe_id, name, price, quantity FROM shoes WHERE shoe_id IN($product_ids)";
 
 $results = mysql_query($query,$db);                                       
