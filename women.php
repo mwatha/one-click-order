@@ -93,7 +93,7 @@ mysql_select_db("shoes", $db);
                 }     
               ?>                                                                
               <p style="color:Purple;font-size:15px;"><?php echo $status; ?></p>           
-              <p style="color:orange;font-size:20px;"><?php echo $r[3]; ?></p>
+              <p style="color:orange;font-size:20px;">₤<?php echo $r[3]; ?></p>
               <p>
 
                <select name="quantity" id="quantity<?php echo $r[0]; ?>">                                    

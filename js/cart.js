@@ -25,6 +25,9 @@
     var quantity = document.getElementById("quantity" + product_id);
     if (quantity) {
       quantity = quantity.value;
+      if (quantity.length < 1)
+        return;
+
     }else{
       quantity = 0;
     }
@@ -55,7 +58,7 @@
           html+="<tr>";
           html+="<td>" + name + "</td>";
           html+="<td>" + quantity + "</td>";
-          html+="<td style='text-align:right;padding-right:10px;'>" +  ((parseFloat(price) * parseFloat(quantity))).toFixed(2); + "</td>";
+          html+="<td style='text-align:right;padding-right:10px;'>₤ " +  ((parseFloat(price) * parseFloat(quantity))).toFixed(2); + "</td>";
           html+="</tr>";
           html+="<tr>";
           html+="<td colspan='3'><hr /></td>";
@@ -64,7 +67,7 @@
         }
         html+="<tr>";
         html+="<td colspan='3' style='color:black;font-weight:bold;font-size:13px;'><span style='float:left;'>Total";
-        html+="</span><span style='float:right;padding-right:10px;'>" + Math.round(100*(total))/100 + "</span></td>";
+        html+="</span><span style='float:right;padding-right:10px;'>₤ " + Math.round(100*(total))/100 + "</span></td>";
         html+="</tr>";
         html+="<tr>";
         html+="<td colspan='3'><hr /></td>";
@@ -83,11 +86,19 @@
     if(user_credit) {
       c =  (parseFloat(user_credit.value) - (credit)).toFixed(2);
       html ="<tr>";
-      html+="<td colspan='3'>" + c + "</td>";
+      html+="<td colspan='3'>Total remaining credit:&nbsp;₤ " + c + "</td>";
       html+="</tr>";
       html +="<tr>";
       html+="<td colspan='3'><hr /></td>";
       html+="</tr>";
+      if(c > 0 && credit > 0) {
+        html +="<tr>";
+        html+="<td colspan='3'><a class='btn' href='summaryb4.php'>Press an order</a></td>";
+        html+="</tr>";
+        html +="<tr>";
+        html+="<td colspan='3'><hr /></td>";
+        html+="</tr>";
+      }
       document.getElementById("credit").innerHTML = html;
     }else{
       return
