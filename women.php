@@ -105,7 +105,9 @@ mysql_select_db("shoes", $db);
               </select>
 
               </p>
+              <?php if($_SESSION['username']) { ?>
               <a class="btn" href="javascript:add(<?php echo $r[0]; ?>);">Add to cart</a>
+              <?php } ?>
             </td>                                                               
           </tr>                                                                 
           <tr>                                                                  
@@ -116,11 +118,6 @@ mysql_select_db("shoes", $db);
           } ?>                                                               
           </tbody>                                                              
         </table>
-
-
-
-
-
 
 
         </div>
@@ -157,12 +154,8 @@ mysql_select_db("shoes", $db);
                 <div class="content">
             
                    <ul class="categories_list">
-                        <li><a href="#">Lorem ipsum dolor</a></li>
-                        <li><a href="#">Phasellus eget lorem</a></li>
-                        <li><a href="#">Sed sit amet sem</a></li>
-                        <li><a href="#">Cras eget est vel</a></li>
-                        <li><a href="#">Quisque in ligula</a></li>
-                    </ul>
+                     <?php require 'credit_cart.php'; ?>
+                   </ul>
                     
                 </div>
                 

@@ -55,7 +55,7 @@
           html+="<tr>";
           html+="<td>" + name + "</td>";
           html+="<td>" + quantity + "</td>";
-          html+="<td style='text-align:right;padding-right:10px;'>" +  (parseFloat(price) * parseFloat(quantity)) + "</td>";
+          html+="<td style='text-align:right;padding-right:10px;'>" +  ((parseFloat(price) * parseFloat(quantity))).toFixed(2); + "</td>";
           html+="</tr>";
           html+="<tr>";
           html+="<td colspan='3'><hr /></td>";
@@ -70,6 +70,7 @@
         html+="<td colspan='3'><hr /></td>";
         html+="</tr>";
         document.getElementById("cart").innerHTML = html;
+        updateCredit(total);
       }                                                                         
     }                                                                           
     xmlhttp.open("GET","addtocart.php?product_id="+product_id+"&quantity="+quantity,true);    
@@ -77,3 +78,18 @@
   }                      
 
 
+  function updateCredit(credit) {
+    user_credit = document.getElementById("user-credit");
+    if(user_credit) {
+      c =  (parseFloat(user_credit.value) - (credit)).toFixed(2);
+      html ="<tr>";
+      html+="<td colspan='3'>" + c + "</td>";
+      html+="</tr>";
+      html +="<tr>";
+      html+="<td colspan='3'><hr /></td>";
+      html+="</tr>";
+      document.getElementById("credit").innerHTML = html;
+    }else{
+      return
+    }
+  }
