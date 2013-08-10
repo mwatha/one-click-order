@@ -56,7 +56,7 @@ mysql_select_db("shoes", $db);
           <tbody>                                                               
           <?php                                                    
 
-          $query = "SELECT * FROM shoes WHERE shoe_type_id ]
+          $query = "SELECT * FROM shoes WHERE shoe_type_id 
             IN(SELECT * FROM shoe_types WHERE name IN('Boys','Girls','Babies'));";                                 
           $results = mysql_query($query,$db);                                   
           $n = mysql_num_rows($results); 
