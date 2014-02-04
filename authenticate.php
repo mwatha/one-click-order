@@ -3,7 +3,7 @@
 $db = mysql_pconnect("localhost","root","letusout!");                        
 mysql_select_db("shoes", $db);      
                                                                                 
-$username = $_POST["username"];                                                       
+$username = mysql_real_escape_string($_POST["username"]);                                                       
 $password = md5($_POST["password"]);                                                       
 
 $user = "SELECT u.user_id,username,role FROM users u 

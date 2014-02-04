@@ -5,16 +5,16 @@ mysql_select_db("shoes", $db);
 
 $user_id = $_SESSION["user_id"];
  
-$fname = $_POST["fname"];                                                       
-$lname = $_POST["lname"];                                                       
-$dob = $_POST["birthdate"]; 
-$sex = $_POST["gender"]; 
-$email = $_POST["email"];                                                   
-$address = $_POST["mailing_address"];                                                   
-$phone = $_POST["phone_number"];                                                   
+$fname = mysql_real_escape_string($_POST["fname"]);                                                       
+$lname = mysql_real_escape_string($_POST["lname"]);                                                       
+$dob = mysql_real_escape_string($_POST["birthdate"]); 
+$sex = mysql_real_escape_string($_POST["gender"]); 
+$email = mysql_real_escape_string($_POST["email"]);                                                   
+$address = mysql_real_escape_string($_POST["mailing_address"]);                                                   
+$phone = mysql_real_escape_string($_POST["phone_number"]);                                                   
 $password = md5($_POST["password"]);                                                   
 $edited_password = $_POST["password"];                                                   
-$credit = $_POST["credit"];
+$credit = mysql_real_escape_string($_POST["credit"]);
 
 $hour =  date("G") - 1;                                                         
 if ($hour < 9) {                                                                
